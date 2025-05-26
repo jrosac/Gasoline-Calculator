@@ -29,16 +29,16 @@ function App() {
       //alert("worth it use alcohol")
       setInfo({
         title : "worth it use alcohol",
-        gasoline : gasolineInput,
-        alcohol : alcoholInput
+        gasoline : formatarMoeda(gasolineInput),
+        alcohol : formatarMoeda(alcoholInput)
       })
     }
     else{
       //alert("worth it use gasoline")
       setInfo({
         title : "worth it use gasoline",
-        gasoline : gasolineInput,
-        alcohol : alcoholInput
+        gasoline : formatarMoeda(gasolineInput),
+        alcohol : formatarMoeda(alcoholInput)
       })
     }
 
@@ -47,6 +47,16 @@ function App() {
  
 
     //alert("test")
+  }
+
+  function formatarMoeda(valor: number){
+    let valorFormatado = valor.toLocaleString("pt-br",
+      {
+        style: "currency",
+        currency: "BRL"
+      }
+    )
+    return valorFormatado
   }
 
 
